@@ -3,13 +3,6 @@ import ReactDOM from 'react-dom';
 import MapControl  from './MapControl ';
 import Toggle from './Toggle';
 
-
-ReactDOM.render(
-    <div id='r'>
-        <MapControl/>
-        <Toggle/>
-    </div>
-    ,
-  document.getElementById('root')
-);
+let node =document.getElementById('root')
+ReactDOM.render(<div><MapControl/><Toggle/></div>, node)
 
