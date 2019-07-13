@@ -70,9 +70,10 @@ module.exports = function(_, arg) {
             "process.env.NODE_ENV": JSON.stringify(arg.mode || "production")
         }),
         new htmlWebpackPlugin({
-            filename: path.join(__dirname, "./public/index.html"),
-           // template: path.join(__dirname, "./public/index.html"),  //模板页面
-            chunks: ['index', 'vendor', 'common']  //打包什么东西
+            template: path.join(__dirname, "./public/index.html"),
+            chunks: ['index', 'vendor', 'common'],  //打包什么东西
+            favicon: path.join(__dirname,"./public/assets/favicon.ico"),
+            mode: arg.mode
         }),
 
         new ExtractTextPlugin({
