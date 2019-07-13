@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import emitter from './events';
 export default class  Toggle extends React.Component {
 
     constructor(props) {
@@ -17,11 +17,7 @@ export default class  Toggle extends React.Component {
         this.setState({
             isToggleOn: !this.state.isToggleOn
         });
-        if(this.state.isToggleOn){
-            console.log('2d')
-        }else{
-            console.log('3d')
-        }
+        emitter.emit('ViewChange',this.state.isToggleOn)
     }
 
     render() {
