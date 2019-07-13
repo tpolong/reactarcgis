@@ -11,6 +11,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
@@ -32,9 +33,9 @@
     "react-scripts": "3.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --mode development --open",
+    "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "serve": "webpack-dev-server --history-api-fallback --mode production --open --https --compress"
+    "serve": "webpack-dev-server  --mode production --open --https --compress"
   },
   "eslintConfig": {
     "extends": "react-app"

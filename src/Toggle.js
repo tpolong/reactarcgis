@@ -1,7 +1,6 @@
 import * as React from "react";
 import emitter from './events';
 export default class  Toggle extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {

@@ -1,11 +1,6 @@
-import {useState, useEffect} from 'react';
 import {loadModules} from 'esri-loader';
 import emitter from './events';
-
 const MapControl = (props) => {
-
-    const [graphic, setGraphic] = useState(null);
-    useEffect(() => {
         const options = {
             url: 'https://js.arcgis.com/4.12/'
         };
@@ -19,7 +14,6 @@ const MapControl = (props) => {
                 activeView: null,
                 container: 'root'// use same container for views
             };
-
             let initialViewParams = {
                 zoom: 12,
                 center: [-122.43759993450347, 37.772798684981126],
@@ -41,11 +35,11 @@ const MapControl = (props) => {
             appConfig.mapView = createView(initialViewParams, "2d");
             appConfig.mapView.map = webmap;
             appConfig.activeView = appConfig.mapView;
-
             // create 3D view, won't initialize until container is set
             initialViewParams.container = null;
             initialViewParams.map = scene;
             appConfig.sceneView = createView(initialViewParams, "3d");
+
             emitter.on('ViewChange', () => {
                 switchView()
             })
@@ -68,9 +62,6 @@ const MapControl = (props) => {
                 // remove the reference to the container for the previous view
                 appConfig.activeView.container = null;
                 if (is3D) {
-                    // if the input view is a SceneView, set the viewpoint on the
-                    // mapView instance. Set the container on the mapView and flag
-                    // it as the active view
                     appConfig.mapView.viewpoint = activeViewpoint;
                     appConfig.mapView.container = appConfig.container;
                     appConfig.activeView = appConfig.mapView;
@@ -81,12 +72,7 @@ const MapControl = (props) => {
                 }
             }
         }).catch((err) => console.error(err));
-        return function cleanup() {
-            props.view.graphics.remove(graphic);
-        };
-    }, [graphic, props]);
 
     return null;
-
 }
 export default MapControl ;
