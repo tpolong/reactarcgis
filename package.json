@@ -29,6 +29,7 @@
   "dependencies": {
     "esri-loader": "^2.10.0",
     "react": "^16.8.4",
+    "esri-loader-react": "^2.0.3",
     "react-dom": "^16.8.4",
     "react-scripts": "3.0.0"
   },

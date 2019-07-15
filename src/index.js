@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapControl  from './components/MapControl';
-import Toggle from './components/Toggle';
+import App  from './components/MapControl';
 
-let node =document.getElementById('root')
-ReactDOM.render(
-    <div><MapControl view={{value:true}}/><Toggle/></div>
-    ,
-node);
+let node =document.getElementById('view')
+ReactDOM.render( <App /> ,node);
 
 
