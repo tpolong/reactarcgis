@@ -8,9 +8,8 @@ const MapControl = (props) => {
     console.log(view)
 
     loadModules(['esri/Map', 'esri/views/MapView',
-        "esri/views/SceneView",
-        "esri/WebMap",
-        "esri/WebScene"], options).then(([Map, MapView, SceneView, WebMap, WebScene]) => {
+        "esri/views/SceneView"
+        ], options).then(([Map, MapView, SceneView]) => {
         let appConfig = {
             mapView: null,
             sceneView: null,
@@ -23,24 +22,16 @@ const MapControl = (props) => {
             map: null,
             container: appConfig.container
         };
-        let webmap = new WebMap({
-            portalItem: {
-                // autocasts as new PortalItem()
-                id: "7ee3c8a93f254753a83ac0195757f137"
-            }
+        let webmap =  new Map({
+            basemap: "topo-vector"
         });
-        let scene = new WebScene({
-            portalItem: {
-                // autocasts as new PortalItem()
-                id: "c8cf26d7acab4e45afcd5e20080983c1"
-            }
-        });
+
         appConfig.mapView = createView(initialViewParams, "2d");
         appConfig.mapView.map = webmap;
         appConfig.activeView = appConfig.mapView;
         // create 3D view, won't initialize until container is set
         initialViewParams.container = null;
-        initialViewParams.map = scene;
+        initialViewParams.map = webmap;
         appConfig.sceneView = createView(initialViewParams, "3d");
         if (!view.value) {
             switchView()
