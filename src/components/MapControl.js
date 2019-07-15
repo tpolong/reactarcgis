@@ -23,7 +23,7 @@ const MapControl = (props) => {
             container: appConfig.container
         };
         let webmap =  new Map({
-            basemap: "topo-vector"
+            basemap: "satellite"
         });
 
         appConfig.mapView = createView(initialViewParams, "2d");
