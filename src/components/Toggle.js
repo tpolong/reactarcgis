@@ -1,18 +1,16 @@
-import * as React from "react";
+import React from "react";
 import emitter from './events';
-export default class  Toggle extends React.Component {
+
+export default class Toggle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isToggleOn: true
         };
-
-        // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
-        this.handleClick = this.handleClick.bind(this);
+      this.handleClick =this.handleClick.bind(this)
     }
 
-    handleClick() {
-
+    handleClick=()=>{
         this.setState({
             isToggleOn: !this.state.isToggleOn
         });
@@ -28,3 +26,4 @@ export default class  Toggle extends React.Component {
         );
     }
 }
+
