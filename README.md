@@ -5,7 +5,5 @@
 ### `npm run build`
 
 构建代码
-
-![截图](https://upload-images.jianshu.io/upload_images/3962840-1e142075d87b6fa2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![截图](https://upload-images.jianshu.io/upload_images/3962840-4da5fd17230c20d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://user-gold-cdn.xitu.io/2019/7/15/16bf49416792ad35?w=1920&h=1080&f=png&s=2024162)
+![](https://user-gold-cdn.xitu.io/2019/7/15/16bf4953abb2cd50?w=1920&h=1080&f=png&s=1391909)
