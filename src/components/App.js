@@ -90,7 +90,7 @@ class App extends React.PureComponent {
             <EsriLoaderReact
                 onReady={this.mapload}
             >
-                <Toggle mapchange={this.change}/>
+                <Toggle mapchange={this.change} is2D={true}/>
             </EsriLoaderReact>
         )
     }

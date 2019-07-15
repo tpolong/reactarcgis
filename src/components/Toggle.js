@@ -3,7 +3,7 @@ export default class Toggle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isToggleOn: true
+            isToggleOn: this.props.is2D
         };
       this.handleClick =this.handleClick.bind(this)
     }
