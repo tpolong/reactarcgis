@@ -23,7 +23,7 @@ class App extends React.PureComponent {
                 mapView: null,
                 sceneView: null,
                 activeView: null,
-                container: 'root'// use same container for views
+                container: this.props.node// use same container for views
             };
             let initialViewParams = {
                 zoom: 12,
@@ -48,7 +48,11 @@ class App extends React.PureComponent {
                 initialViewParams.container = null;
                 initialViewParams.map = webmap;
                 appConfig.sceneView = createView(initialViewParams, "3d");
+                // if (!this.props.value) {
+                //     this.action()
+                // }
             }
+
 
             function createView(params, type) {
                 var view;
@@ -84,8 +88,6 @@ class App extends React.PureComponent {
     render() {
         return (
             <EsriLoaderReact
-                change={this.change}
-                mapContainerClassName='fullSize'
                 onReady={this.mapload}
             >
                 <Toggle mapchange={this.change}/>
