@@ -62,7 +62,6 @@ module.exports = function (_, arg) {
             }),
             new htmlWebpackPlugin({
                 template: path.join(__dirname, "./public/index.html"),
-                chunks: ['index', 'vendor', 'common'],  //打包什么东西
                 favicon: path.join(__dirname, "./public/assets/favicon.ico"),
                 mode: arg.mode
             }),
