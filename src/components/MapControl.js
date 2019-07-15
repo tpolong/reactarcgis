@@ -25,17 +25,25 @@ const MapControl = (props) => {
         let webmap =  new Map({
             basemap: "satellite"
         });
-
+        let canvas = document.createElement("canvas");
+        // Get WebGLRenderingContext from canvas element
+        let gl =  canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        let webglDetect=(gl && gl instanceof WebGLRenderingContext)
         appConfig.mapView = createView(initialViewParams, "2d");
         appConfig.mapView.map = webmap;
         appConfig.activeView = appConfig.mapView;
-        // create 3D view, won't initialize until container is set
-        initialViewParams.container = null;
-        initialViewParams.map = webmap;
-        appConfig.sceneView = createView(initialViewParams, "3d");
-        if (!view.value) {
-            switchView()
+        if (!webglDetect) {
+            alert('WebGL is not supported on your platform/browser')
+        }else{
+            // create 3D view, won't initialize until container is set
+            initialViewParams.container = null;
+            initialViewParams.map = webmap;
+            appConfig.sceneView = createView(initialViewParams, "3d");
+            if (!view.value) {
+                switchView()
+            }
         }
+
         emitter.on('ViewChange', () => {
             switchView()
         })
