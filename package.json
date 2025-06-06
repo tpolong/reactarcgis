@@ -24,7 +24,7 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^5.2.1"
   },
   "dependencies": {
     "esri-loader": "^2.10.0",
